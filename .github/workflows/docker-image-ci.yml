@@ -2,9 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
-    paths:
-    - 'venta/**'
+    branches: [ "main" ]  
 jobs:
   build:
     runs-on: ubuntu-latest
