@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-    - 'ventas/**'
+    - 'venta/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
       name: Build and push the Docker image
       uses: docker/build-push-action@v3
       with: 
-        context: ventas/
+        context: venta/
         push: true
         tags: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/pruebadosamaguanaparraga:latest
-        file: ./ventas/Dockerfile
+        file: ./venta/Dockerfile
