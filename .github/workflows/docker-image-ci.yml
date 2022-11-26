@@ -3,7 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-
+    paths:
+    - 'ventas/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,5 +23,7 @@ jobs:
       name: Build and push the Docker image
       uses: docker/build-push-action@v3
       with: 
+        context: ventas/
         push: true
-        tags: ${{secrets.DOCKERHUB_USERNAME }}/pruebaamaguanaparraga:latest
+        tags: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/pruebadosamaguanaparraga:latest
+        file: ./ventas/Dockerfile
