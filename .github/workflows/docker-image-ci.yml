@@ -23,7 +23,7 @@ jobs:
       with: 
         context: venta/
         push: true
-        tags: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/pruebadosamaguanaparraga:latest
+        tags: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/spring:latest
         file: ./venta/Dockerfile
         
     -
@@ -32,6 +32,6 @@ jobs:
       with: 
         context: vista/
         push: true
-        tags: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/pruebadosamaguanaparragavista:latest
+        tags: index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/angular:latest
         file: ./vista/Dockerfile
 
